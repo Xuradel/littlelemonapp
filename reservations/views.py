@@ -42,20 +42,20 @@ from rest_framework.permissions import IsAuthenticated
 class MenuItemView(generics.ListCreateAPIView):
     queryset = MenuTable.objects.all()
     serializer_class = MenuTableSerializer
-    def get_permissions(self):
-        permission_classes = []
-        if self.request.method != 'GET':
-            permission_classes = [IsAuthenticated]
-        return [permission() for permission in permission_classes]
+    # def get_permissions(self):
+    #     permission_classes = []
+    #     if self.request.method != 'GET':
+    #         permission_classes = [IsAuthenticated]
+    #     return [permission() for permission in permission_classes]
 
 class MenuItemSingleView(generics.RetrieveUpdateDestroyAPIView):
     queryset = MenuTable.objects.all()
     serializer_class = MenuTableSerializer
-    def get_permissions(self):
-        permission_classes = []
-        if self.request.method != 'GET':
-            permission_classes = [IsAuthenticated]
-        return [permission() for permission in permission_classes]
+    # def get_permissions(self):
+    #     permission_classes = []
+    #     if self.request.method != 'GET':
+    #         permission_classes = [IsAuthenticated]
+    #     return [permission() for permission in permission_classes]
 
 class UserView(generics.ListCreateAPIView):
     queryset = User.objects.all()
